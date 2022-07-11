@@ -26,17 +26,18 @@
   <!-- <meta name="import-map-overrides-domains" content="denylist:prod.example.com" /> -->
 
   <!-- Shared dependencies go into this import map. Your shared dependencies must be of one of the following formats:
-
+    
     1. System.register (preferred when possible) - https://github.com/systemjs/systemjs/blob/master/docs/system-register.md
     2. UMD - https://github.com/umdjs/umd
     3. Global variable
-
+    
     More information about shared dependencies can be found at https://single-spa.js.org/docs/recommended-setup#sharing-with-import-maps.
   -->
   <script type="systemjs-importmap">
     {
       "imports": {
         "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
+        "root-config": "//localhost:9000/central-app-root-config.js",
         "angular-finance-control": "//localhost:4201/main.js",
         "angular-investment-control": "//localhost:4202/main.js"
       }
@@ -61,9 +62,9 @@
     <% } %>
 
       <!--
-    If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
-    Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
-  -->
+      If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
+      Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
+    -->
       <!-- <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script> -->
 
       <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
@@ -78,13 +79,16 @@
 </head>
 
 <body>
-  <noscript>
-    You need to enable JavaScript to run this app.
-  </noscript>
+  <main>
+
+  </main>
   <script>
     System.import('@central-app/root-config');
   </script>
   <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
+
+  <script src="https://cdn.jsdelivr.net/npm/zone.js@0.10.3/dist/zone.min.js"></script>
+
 </body>
 
 </html>

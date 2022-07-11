@@ -12,4 +12,12 @@ registerApplication({
   activeWhen: (location) => location.pathname.startsWith("/investment-control"),
 });
 
-start();
+// registerApplication({
+//   name: "angular-investment-control",
+//   app: () => System.import("angular-investment-control"),
+//   activeWhen: ["/"],
+// });
+
+start({
+  urlRerouteOnly: true,
+});
