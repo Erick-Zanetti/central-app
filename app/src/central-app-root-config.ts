@@ -15,7 +15,7 @@ registerApplication({
 registerApplication({
   name: "angular-main",
   app: () => System.import("angular-main"),
-  activeWhen: ["/"],
+  activeWhen: ["/main"],
 });
 
 start({
