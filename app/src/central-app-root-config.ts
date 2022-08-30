@@ -1,23 +1,27 @@
-import { registerApplication, start } from "single-spa";
+import { Application, registerApplication, start } from "single-spa";
+import {
+  constructApplications,
+  constructRoutes,
+  constructLayoutEngine,
+} from "single-spa-layout";
+import microfrontendLayout from "./microfrontend-layout.html";
 
-registerApplication({
-  name: "angular-finance-control",
-  app: () => System.import("angular-finance-control"),
-  activeWhen: (location) => location.pathname.startsWith("/finance-control"),
+const routes = constructRoutes(microfrontendLayout);
+const applications = constructApplications({
+  routes,
+  loadApp({ name }) {
+    return System.import(name);
+  },
 });
+const layoutEngine = constructLayoutEngine({ routes, applications });
 
-registerApplication({
-  name: "angular-investment-control",
-  app: () => System.import("angular-investment-control"),
-  activeWhen: (location) => location.pathname.startsWith("/investment-control"),
-});
+applications.forEach(registerApplication);
+layoutEngine.activate();
 
-registerApplication({
-  name: "angular-main",
-  app: () => System.import("angular-main"),
-  activeWhen: ["/main"],
-});
+registerApplication(
+  '@central-app/financial-management',
+  (() => System.import('@central-app/financial-management')) as Application<{}>,
+  location => location.pathname.startsWith('/financial-management'),
+);
 
-start({
-  urlRerouteOnly: true,
-});
+start();
