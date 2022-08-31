@@ -2,6 +2,11 @@
   "name": "@central-app/root-config",
   "scripts": {
     "start": "webpack serve --port 9000 --env isLocal",
+    "start:app-home": "cd projects/home/app-home && npm run serve:single-spa",
+    "start:parcel-header": "cd projects/shared/parcel-header && npm run serve:single-spa",
+    "start:parcel-financial-management-card-home": "cd projects/financial-management/parcel-financial-management-card-home && npm run serve:single-spa",
+    "start:app-financial-management": "cd projects/financial-management/app-financial-management && npm run serve:single-spa",
+    "start:all": "concurrently --kill-others \"npm run start\" \"npm run start:app-home\" \"npm run start:parcel-header\"  \"npm run start:parcel-financial-management-card-home\" \"npm run start:app-financial-management\" ",
     "lint": "eslint src --ext js,ts,tsx",
     "test": "cross-env BABEL_ENV=test jest --passWithNoTests",
     "format": "prettier --write .",
