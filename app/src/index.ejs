@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="margin: 0;height: 100%;">
 
 <head>
   <meta charset="UTF-8">
@@ -40,10 +40,13 @@
         "react": "https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.production.min.js",
         "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js",
         "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
+        "@central-app/root-config": "//localhost:9000/central-app-root-config.js",
         "@central-app/financial-management": "//localhost:4000/main.js",
-        "@central-app/parcel-financial-management-card-home": "//localhost:4010/central-app-parcel-financial-management-card-home.js",
+        "@central-app/parcel-header": "//localhost:4001/main.js",
+        "@central-app/app-page-not-found": "//localhost:4002/main.js",
         "@central-app/home": "//localhost:3000/central-app-app-home.js",
-        "@central-app/parcel-header": "//localhost:4001/main.js"
+        "@central-app/parcel-to-do-list-card-home": "//localhost:3001/central-app-parcel-to-do-list-card-home.js",
+        "@central-app/parcel-financial-management-card-home": "//localhost:3002/central-app-parcel-financial-management-card-home.js"
       }
     }
   </script>
@@ -61,9 +64,11 @@
         "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
         "@central-app/root-config": "//localhost:9000/central-app-root-config.js",
         "@central-app/financial-management": "//localhost:4000/main.js",
-        "@central-app/parcel-financial-management-card-home": "//localhost:4010/central-app-parcel-financial-management-card-home.js",
+        "@central-app/parcel-header": "//localhost:4001/main.js",
+        "@central-app/app-page-not-found": "//localhost:4002/main.js",
         "@central-app/home": "//localhost:3000/central-app-app-home.js",
-        "@central-app/parcel-header": "//localhost:4001/main.js"
+        "@central-app/parcel-to-do-list-card-home": "//localhost:3001/central-app-parcel-to-do-list-card-home.js",
+        "@central-app/parcel-financial-management-card-home": "//localhost:3002/central-app-parcel-financial-management-card-home.js"
       }
     }
   </script>
@@ -84,9 +89,14 @@
           <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
           <% } %>
 
+            <style>
+              .shell-body>div {
+                height: 100%;
+              }
+            </style>
 </head>
 
-<body style="margin: 0;">
+<body style="margin: 0;height: 100%;" class="shell-body">
   <noscript>
     You need to enable JavaScript to run this app.
   </noscript>
