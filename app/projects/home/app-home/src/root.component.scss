@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+.container-home {
+    padding: 16px;
+    background: rgb(63, 81, 181);
+    background: linear-gradient(180deg, rgba(63, 81, 181, 1) 0%, rgba(21, 39, 135, 1) 46%, rgba(0, 212, 255, 1) 100%);
+}
+
+.main-title {
+    font-weight: 700;
+    font-size: 20px;
+    color: #fff;
+}
+
+.sub-title {
+    font-weight: 400;
+    font-size: 16px;
+    color: rgb(215, 215, 215);
+}
+
+.main-title,
+.sub-title {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container-home,
+section {
+    height: 100%;
+}
