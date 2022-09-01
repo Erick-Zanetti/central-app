@@ -20,4 +20,8 @@ export class AppComponent implements OnInit {
         }
       });
   }
+
+  goToHome() {
+    window.location.href = window.location.origin + '/home';
+  }
 }

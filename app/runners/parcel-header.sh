@@ -1,0 +1,1 @@
+cd ../projects/shared/parcel-header && npm run serve:single-spa

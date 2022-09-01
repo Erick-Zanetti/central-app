@@ -1,10 +1,7 @@
-interface RouterRuleActive {
-    startWith?: string[];
-    equals?: string[];
-}
-
-interface Routes {
-    [key: string]: RouterRuleActive
+export enum Applications {
+    FINANCIAL_MANAGEMENT = 'FINANCIAL_MANAGEMENT',
+    HOME = 'HOME',
+    TODO_LIST = 'TODO_LIST'
 }
 
 export const routes: Routes = {
@@ -14,6 +11,9 @@ export const routes: Routes = {
     HOME: {
         startWith: ['/home'],
         equals: ["/", ""]
+    },
+    TODO_LIST: {
+        startWith: ['/to-do-list'],
     },
 }
 
@@ -31,4 +31,13 @@ export function activeWhen(location: Location, rule: RouterRuleActive): boolean 
         }
     }
     return false;
+}
+
+interface RouterRuleActive {
+    startWith?: string[];
+    equals?: string[];
+}
+
+type Routes = {
+    [key in Applications]: RouterRuleActive
 }

@@ -1,0 +1,1 @@
+cd ../projects/to-do-list/app-to-do-list && npm run serve:single-spa

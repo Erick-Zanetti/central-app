@@ -1,3 +1,3 @@
 import { setPublicPath } from "systemjs-webpack-interop";
 
-setPublicPath("@central-app/financial-management");
+setPublicPath("@central-app/app-financial-management");

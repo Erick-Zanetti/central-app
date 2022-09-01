@@ -1,0 +1,1 @@
+cd ../projects/financial-management/parcel-financial-management-card-home && npm run serve:single-spa

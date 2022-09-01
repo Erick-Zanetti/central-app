@@ -1,0 +1,1 @@
+cd ../projects/home/app-home && npm run serve:single-spa

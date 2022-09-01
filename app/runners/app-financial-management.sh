@@ -1,0 +1,1 @@
+cd ../projects/financial-management/app-financial-management && npm run serve:single-spa

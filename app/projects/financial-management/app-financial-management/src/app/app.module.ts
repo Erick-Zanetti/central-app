@@ -1,3 +1,4 @@
+import { ParcelModule } from 'single-spa-angular/parcel';
 import { APP_BASE_HREF } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,7 +12,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ParcelModule
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/financial-management' }
