@@ -1,7 +1,8 @@
 export enum Applications {
     FINANCIAL_MANAGEMENT = 'FINANCIAL_MANAGEMENT',
     HOME = 'HOME',
-    TODO_LIST = 'TODO_LIST'
+    TODO_LIST = 'TODO_LIST',
+    PORTFOLIO = 'PORTFOLIO'
 }
 
 export const routes: Routes = {
@@ -15,6 +16,9 @@ export const routes: Routes = {
     TODO_LIST: {
         startWith: ['/to-do-list'],
     },
+    PORTFOLIO: {
+        startWith: ['/portfolio'],
+    }
 }
 
 export function activeWhen(location: Location, rule: RouterRuleActive): boolean {

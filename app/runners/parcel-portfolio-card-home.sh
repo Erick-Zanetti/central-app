@@ -1,0 +1,1 @@
+cd ../projects/portfolio/parcel-portfolio-card-home && npm run serve:single-spa

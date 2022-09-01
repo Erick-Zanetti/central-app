@@ -34,6 +34,11 @@ export default function Root(props) {
             <Parcel config={(() => System.import('@central-app/parcel-to-do-list-card-home')) as ParcelConfig<{}>} />
           </div>
         </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+          <div>
+            <Parcel config={(() => System.import('@central-app/parcel-portfolio-card-home')) as ParcelConfig<{}>} />
+          </div>
+        </Grid>
       </Grid>
     </div>
   </section >;

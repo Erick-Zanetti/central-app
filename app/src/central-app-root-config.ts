@@ -20,6 +20,12 @@ registerApplication({
 });
 
 registerApplication({
+  name: '@central-app/app-portfolio',
+  app: (() => System.import('@central-app/app-portfolio')) as Application<{}>,
+  activeWhen: location => activeWhen(location, routes.PORTFOLIO),
+});
+
+registerApplication({
   name: '@central-app/app-page-not-found',
   app: (() => System.import('@central-app/app-page-not-found')) as Application<{}>,
   activeWhen: location => {
