@@ -1,10 +1,11 @@
+import { MonthLabelPipeModule } from './pipes/month-label/month-label.module';
 import { ParcelModule } from 'single-spa-angular/parcel';
-import { APP_BASE_HREF } from '@angular/common';
+import { APP_BASE_HREF, CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppComponent } from './app.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -12,8 +13,11 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    ParcelModule
+    CommonModule,
+    ParcelModule,
+    MatTabsModule,
+    MonthLabelPipeModule,
+    BrowserAnimationsModule
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/financial-management' }

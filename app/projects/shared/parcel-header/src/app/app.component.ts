@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { take } from 'rxjs';
 
 @Component({
-  selector: 'app-root',
+  selector: 'parcel-header',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

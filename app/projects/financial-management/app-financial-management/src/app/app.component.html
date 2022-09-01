@@ -1,2 +1,13 @@
-<parcel [config]="config" [mountParcel]="mountRootParcel" [customProps]="customProps"></parcel>
-<router-outlet></router-outlet>
+<div>
+    <parcel [config]="config" [mountParcel]="mountRootParcel" [customProps]="customProps"></parcel>
+</div>
+<mat-tab-group>
+    <mat-tab *ngFor="let month of months">
+        <ng-template mat-tab-label>
+            {{month.month | monthLabel}}/{{month.year}}
+        </ng-template>
+        <ng-template matTabContent>
+            content
+        </ng-template>
+    </mat-tab>
+</mat-tab-group>
