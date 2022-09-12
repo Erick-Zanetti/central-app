@@ -1,0 +1,34 @@
+:host {
+    position: relative;
+
+    .add-new {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+h3 {
+    text-align: center;
+    height: 30px;
+    margin: 6px 0 12px 0;
+}
+
+table {
+    width: 100%;
+
+    tr.mat-footer-row {
+        font-weight: bold;
+    }
+
+    .mat-footer-cell-end,
+    .mat-cell-end {
+        text-align: end;
+    }
+}
+
+::ng-deep .mat-header-cell-end {
+    .mat-sort-header-container {
+        justify-content: end;
+    }
+}

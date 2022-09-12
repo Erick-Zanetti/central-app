@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppComponent } from './app.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { FlowModule } from './components/flow/flow.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     ParcelModule,
     MatTabsModule,
     MonthLabelPipeModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FlowModule,
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/financial-management' }

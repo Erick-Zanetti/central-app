@@ -10,7 +10,7 @@ export default function Root(props) {
     title: 'Central APP'
   }
 
-  return <section>
+  return <section className='app-home'>
     <Parcel config={(() => System.import('@central-app/parcel-header')) as ParcelConfig<{}>} parcelProps={parcelProps} />
     <div className="container-home">
       <Grid container item spacing={2}>

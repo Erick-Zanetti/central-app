@@ -1,0 +1,26 @@
+<div class="flow-container">
+    <div fxLayout="row wrap" fxLayoutAlign="space-between start" fxLayoutGap="16px grid">
+        <div fxFlex="100">
+            <h2>Saldo: {{getBalance() | currency: 'BRL'}}</h2>
+        </div>
+        <div fxFlex="50" fxFlex.lt-md="100">
+            <div class="box-list">
+                <app-list title="Receitas" [list]="receipts" (onAdd)="newReceipt()" (onEdit)="editReceipt($event)">
+                </app-list>
+                <app-pie-chart [list]="receipts"></app-pie-chart>
+            </div>
+        </div>
+        <div fxFlex="50" fxFlex.lt-md="100">
+            <div class="box-list">
+                <app-list title="Despesas" [list]="expenses" (onAdd)="newExpense()" (onEdit)="editExpense($event)">
+                </app-list>
+                <app-pie-chart [list]="expenses"></app-pie-chart>
+            </div>
+        </div>
+        <div fxFlex="100">
+            <div class="box-list">
+                <app-bar-chart></app-bar-chart>
+            </div>
+        </div>
+    </div>
+</div>

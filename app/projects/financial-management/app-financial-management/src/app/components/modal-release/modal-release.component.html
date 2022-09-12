@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>{{data.new ? 'Adicionar' : 'Editar'}}</h1>
+<div mat-dialog-content>
+    <p>What's your favorite animal?</p>
+
+</div>
+<div mat-dialog-actions style="justify-content: flex-end;">
+    <button mat-button color="warn" (click)="onNoClick()">Cancelar</button>
+    <button mat-button color="primary" cdkFocusInitial>Salvar</button>
+</div>

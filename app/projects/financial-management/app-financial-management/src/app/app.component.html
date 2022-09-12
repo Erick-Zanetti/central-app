@@ -7,7 +7,7 @@
             {{month.month | monthLabel}}/{{month.year}}
         </ng-template>
         <ng-template matTabContent>
-            content
+            <app-flow [month]="month"></app-flow>
         </ng-template>
     </mat-tab>
 </mat-tab-group>
