@@ -30,6 +30,7 @@ export class MainService {
             new Receipt({ month: 7, year: 2022 }, 550, 'Mãe Ingles/Camera'),
             new Receipt({ month: 7, year: 2022 }, 300, 'Reembolso'),
             new Receipt({ month: 7, year: 2022 }, 270, 'Saldo'),
+            new Receipt({ month: 7, year: 2022 }, 3000, 'Emprestimo Rod'),
         ]);
     }
 }

@@ -36,7 +36,7 @@ export class PieChartComponent {
         plugins: {
             legend: {
                 display: true,
-                position: 'top',
+                position: 'left',
             },
         }
     };
