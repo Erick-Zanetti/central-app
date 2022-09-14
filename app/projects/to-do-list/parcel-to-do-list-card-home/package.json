@@ -2,7 +2,7 @@
   "name": "@central-app/parcel-to-do-list-card-home",
   "scripts": {
     "start": "webpack serve",
-    "serve:single-spa": "webpack serve --port 3001",
+    "serve:single-spa": "webpack serve --port 5001",
     "start:standalone": "webpack serve --env standalone",
     "build": "concurrently npm:build:*",
     "build:webpack": "webpack --mode=production",

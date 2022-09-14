@@ -4,10 +4,11 @@ import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) { }
 
   @EventPattern('log_message')
   async handleMessagePrinted(data: Record<string, unknown>) {
+    console.log(456);
     this.appService.logMessage(data.text)
   }
 }

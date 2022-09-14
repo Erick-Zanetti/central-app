@@ -2,7 +2,7 @@
   "name": "@central-app/app-typing",
   "scripts": {
     "start": "webpack serve",
-    "serve:single-spa": "webpack serve --port 3006",
+    "serve:single-spa": "webpack serve --port 5005",
     "start:standalone": "webpack serve --env standalone",
     "build": "concurrently npm:build:*",
     "build:webpack": "webpack --mode=production",

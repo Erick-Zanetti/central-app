@@ -1,16 +1,16 @@
 FRONT
-    3000    app-home                                REACT
-    3001    parcel-to-do-list-card-home             REACT
-    3002    parcel-financial-management-card-home   REACT
-    3003    app-to-do-list                          REACT
-    3004    parcel-portfolio-card-home              REACT
-    3006    app-typing                              REACT
     4000    app-financial-management                ANGULAR
     4001    parcel-header                           ANGULAR
     4002    app-page-not-found                      ANGULAR
     4003    app-portfolio                           ANGULAR
     4004    parcel-typing-card-home                 ANGULAR
+    5000    app-home                                REACT
+    5001    parcel-to-do-list-card-home             REACT
+    5002    parcel-financial-management-card-home   REACT
+    5003    app-to-do-list                          REACT
+    5004    parcel-portfolio-card-home              REACT
+    5005    app-typing                              REACT
     9000    shell
 BACK
-    5000    logger
-    5001    financial-management
+    3000    gateway
+    3001    financial-management

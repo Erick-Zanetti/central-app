@@ -2,11 +2,11 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 
-const microserviceOptions : MicroserviceOptions = {
+const microserviceOptions: MicroserviceOptions = {
   transport: Transport.TCP,
   options: {
-    host: '127.0.0.1',
-    port: 5000
+    host: 'localhost',
+    port: 3000
   },
 };
 

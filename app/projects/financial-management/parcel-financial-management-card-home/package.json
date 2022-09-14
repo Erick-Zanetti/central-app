@@ -1,8 +1,8 @@
 {
   "name": "@central-app/parcel-financial-management-card-home",
   "scripts": {
-    "start": "webpack serve --port 3002",
-    "serve:single-spa": "webpack serve --port 3002",
+    "start": "webpack serve --port 5002",
+    "serve:single-spa": "webpack serve --port 5002",
     "start:standalone": "webpack serve --env standalone",
     "build": "concurrently npm:build:*",
     "build:webpack": "webpack --mode=production",
