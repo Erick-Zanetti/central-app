@@ -26,7 +26,7 @@ export default function Root(props) {
       <Grid container item spacing={2}>
         <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
           <div>
-            <Parcel config={(() => System.import('@central-app/parcel-financial-management-card-home')) as ParcelConfig<{}>} />
+            <Parcel config={(() => System.import('@central-app/parcel-portfolio-card-home')) as ParcelConfig<{}>} />
           </div>
         </Grid>
         <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
@@ -36,7 +36,12 @@ export default function Root(props) {
         </Grid>
         <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
           <div>
-            <Parcel config={(() => System.import('@central-app/parcel-portfolio-card-home')) as ParcelConfig<{}>} />
+            <Parcel config={(() => System.import('@central-app/parcel-financial-management-card-home')) as ParcelConfig<{}>} />
+          </div>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
+          <div>
+            <Parcel config={(() => System.import('@central-app/parcel-typing-card-home')) as ParcelConfig<{}>} />
           </div>
         </Grid>
       </Grid>

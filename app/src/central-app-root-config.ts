@@ -26,6 +26,12 @@ registerApplication({
 });
 
 registerApplication({
+  name: '@central-app/app-typing',
+  app: (() => System.import('@central-app/app-typing')) as Application<{}>,
+  activeWhen: location => activeWhen(location, routes.TYPING),
+});
+
+registerApplication({
   name: '@central-app/app-page-not-found',
   app: (() => System.import('@central-app/app-page-not-found')) as Application<{}>,
   activeWhen: location => {

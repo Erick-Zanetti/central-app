@@ -78,4 +78,12 @@ export class FlowComponent implements OnInit {
       this.searc();
     });
   }
+
+  getTotalExpenses() {
+    return this.expenses.map(t => t.value).reduce((acc, value) => acc + value, 0);
+  }
+
+  getTotalReceipts() {
+    return this.receipts.map(t => t.value).reduce((acc, value) => acc + value, 0);
+  }
 }

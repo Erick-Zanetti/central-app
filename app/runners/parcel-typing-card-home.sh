@@ -1,0 +1,1 @@
+cd ../projects/typing/parcel-typing-card-home && npm run serve:single-spa

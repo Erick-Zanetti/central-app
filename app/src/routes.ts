@@ -2,7 +2,8 @@ export enum Applications {
     FINANCIAL_MANAGEMENT = 'FINANCIAL_MANAGEMENT',
     HOME = 'HOME',
     TODO_LIST = 'TODO_LIST',
-    PORTFOLIO = 'PORTFOLIO'
+    PORTFOLIO = 'PORTFOLIO',
+    TYPING = 'TYPING',
 }
 
 export const routes: Routes = {
@@ -18,6 +19,9 @@ export const routes: Routes = {
     },
     PORTFOLIO: {
         startWith: ['/portfolio'],
+    },
+    TYPING: {
+        startWith: ['/typing'],
     }
 }
 

@@ -25,13 +25,20 @@ export class BarChartComponent {
     public barChartData: ChartData<'bar'> = {
         labels: [''],
         datasets: [
-            { data: [50], label: 'Receitas', backgroundColor: ['#4caf50'], hoverBackgroundColor: ['#43a047'], borderColor: ['#43a047'] },
-            { data: [30], label: 'Despesas', backgroundColor: ['#f44336'], hoverBackgroundColor: ['#e53935'], borderColor: ['#e53935'] }
+            { data: [], label: 'Receitas', backgroundColor: ['#4caf50'], hoverBackgroundColor: ['#43a047'], borderColor: ['#43a047'] },
+            { data: [], label: 'Despesas', backgroundColor: ['#f44336'], hoverBackgroundColor: ['#e53935'], borderColor: ['#e53935'] }
         ]
     };
 
-    // @Input()
-    // set list(list: FinancialRelease[]) {
-    //     this.chart?.update();
-    // }
+    @Input()
+    set receipts(receipts: number) {
+        this.barChartData.datasets[0].data[0] = receipts;
+        this.chart?.update();
+    }
+
+    @Input()
+    set expenses(expenses: number) {
+        this.barChartData.datasets[1].data[0] = expenses;
+        this.chart?.update();
+    }
 }

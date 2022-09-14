@@ -3,8 +3,10 @@
 3002    parcel-financial-management-card-home   REACT
 3003    app-to-do-list                          REACT
 3004    parcel-portfolio-card-home              REACT
+3006    app-typing                              REACT
 4000    app-financial-management                ANGULAR
 4001    parcel-header                           ANGULAR
 4002    app-page-not-found                      ANGULAR
 4003    app-portfolio                           ANGULAR
+4004    parcel-typing-card-home                 ANGULAR
 9000    shell
