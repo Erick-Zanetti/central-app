@@ -1,0 +1,52 @@
+.app-typing {
+	.row>div {
+		margin-bottom: 15px;
+	}
+
+	.meter-gauge>span {
+		text-align: center;
+		font-size: 12px;
+		min-height: 25px;
+		padding: 8px 4px;
+		width: 100%;
+	}
+
+	.meter-gauge {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: space-between;
+
+		@media screen and (max-width: 769px) {
+			flex-direction: column;
+		}
+	}
+
+	.list-item {
+		padding: 8px;
+		text-align: center;
+	}
+
+	.quotes {
+		background-color: #222;
+		font-size: 2.75rem;
+		white-space: pre;
+		padding: .75rem 1rem;
+		overflow: hidden;
+		display: inline-block;
+		width: 100%;
+		min-height: 5.75rem;
+		border-radius: .25rem;
+		position: relative;
+	}
+
+	.quotes.active {
+		box-shadow: 0 0 3px 0.15rem rgb(23, 168, 27);
+		outline: 0;
+	}
+
+	.quotes.active.is-error {
+		box-shadow: 0 0 3px 0.15rem rgb(190, 25, 25);
+		outline: 0;
+	}
+}
