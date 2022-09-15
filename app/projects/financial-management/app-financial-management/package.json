@@ -25,6 +25,7 @@
     "@angular/router": "^14.0.0",
     "chart.js": "^3.9.1",
     "ng2-charts": "^4.0.0",
+    "ng2-currency-mask": "^13.0.3",
     "rxjs": "~7.5.0",
     "single-spa": ">=4.0.0",
     "single-spa-angular": "^7.1.0",

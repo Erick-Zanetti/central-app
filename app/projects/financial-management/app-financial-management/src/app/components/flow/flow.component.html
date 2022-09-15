@@ -5,14 +5,16 @@
         </div>
         <div fxFlex="50" fxFlex.lt-md="100">
             <div class="box-list">
-                <app-list title="Receitas" [list]="receipts" (onAdd)="newReceipt()" (onEdit)="editReceipt($event)">
+                <app-list title="Receitas" [list]="receipts" (onAdd)="newReceipt()" (onEdit)="editReceipt($event)"
+                    (onRemove)="remove($event)">
                 </app-list>
                 <app-pie-chart [list]="receipts"></app-pie-chart>
             </div>
         </div>
         <div fxFlex="50" fxFlex.lt-md="100">
             <div class="box-list">
-                <app-list title="Despesas" [list]="expenses" (onAdd)="newExpense()" (onEdit)="editExpense($event)">
+                <app-list title="Despesas" [list]="expenses" (onAdd)="newExpense()" (onEdit)="editExpense($event)"
+                    (onRemove)="remove($event)">
                 </app-list>
                 <app-pie-chart [list]="expenses"></app-pie-chart>
             </div>

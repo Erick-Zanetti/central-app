@@ -1,3 +1,5 @@
+import { ModalConfirmationModule } from './../modal-confirmation/modal-confirmation.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BarChartModule } from './../bar-chart/bar-chart.module';
 import { ListModule } from './../list/list.module';
 import { CommonModule } from '@angular/common';
@@ -14,7 +16,9 @@ import { PieChartModule } from '../pie-chart/pie-chart.module';
         FlexLayoutModule,
         ModalReleaseModule,
         PieChartModule,
-        BarChartModule
+        BarChartModule,
+        MatSnackBarModule,
+        ModalConfirmationModule
     ],
     declarations: [
         FlowComponent

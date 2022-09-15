@@ -1,11 +1,12 @@
 import { FinancialReleaseDTO } from './../dto/financial-release.dto';
-import { FinancialReleaseDocument, FinancialRelease } from './../models/financial-release.schema';
+import { FinancialReleaseDocument, FinancialRelease, FinancialReleaseType } from './../models/financial-release.schema';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 
 @Injectable()
 export class AppService {
+
   constructor(
     @InjectModel(FinancialRelease.name) private financialReleaseModel: Model<FinancialReleaseDocument>
   ) { }
@@ -33,5 +34,13 @@ export class AppService {
 
   async remove(id: string): Promise<FinancialReleaseDTO> {
     return this.financialReleaseModel.findByIdAndDelete(id).exec();
+  }
+
+  async findByType(type: FinancialReleaseType, month: number, year: number): Promise<FinancialReleaseDTO[]> {
+    return this.financialReleaseModel.find({
+      'type': type,
+      'month.month': month,
+      'month.year': year
+    });
   }
 }

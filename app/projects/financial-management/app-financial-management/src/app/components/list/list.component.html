@@ -20,7 +20,7 @@
                 <button mat-icon-button color="primary" style="margin: 0 16px;" (click)="edit(row)">
                     <mat-icon>edit</mat-icon>
                 </button>
-                <button mat-icon-button color="primary">
+                <button mat-icon-button color="primary" (click)="remove(row)">
                     <mat-icon>delete</mat-icon>
                 </button>
             </td>
@@ -32,7 +32,7 @@
         <tr mat-footer-row *matFooterRowDef="displayedColumns; sticky: true"></tr>
 
         <tr class="mat-row" *matNoDataRow>
-            <td class="mat-cell" colspan="2">Sem dados</td>
+            <td class="mat-cell" colspan="3">Sem dados</td>
         </tr>
     </table>
 </div>

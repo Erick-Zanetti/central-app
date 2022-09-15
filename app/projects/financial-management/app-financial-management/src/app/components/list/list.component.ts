@@ -31,6 +31,9 @@ export class ListComponent implements OnInit, AfterViewInit {
   @Output()
   onEdit = new EventEmitter();
 
+  @Output()
+  onRemove = new EventEmitter();
+
   constructor(
   ) {
     this.dataSource = new MatTableDataSource(this._list || []);
@@ -53,5 +56,9 @@ export class ListComponent implements OnInit, AfterViewInit {
 
   edit(row: FinancialRelease) {
     this.onEdit.emit(row);
+  }
+
+  remove(row: FinancialRelease) {
+    this.onRemove.emit(row._id);
   }
 }

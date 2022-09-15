@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppComponent } from './app.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { FlowModule } from './components/flow/flow.module';
+import { HttpClientModule } from '@angular/common/http';
+import { HeaderIntercptor } from './interceptors/header.intercptor';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,7 @@ import { FlowModule } from './components/flow/flow.module';
   imports: [
     BrowserModule,
     CommonModule,
+    HttpClientModule,
     ParcelModule,
     MatTabsModule,
     MonthLabelPipeModule,
@@ -22,7 +25,8 @@ import { FlowModule } from './components/flow/flow.module';
     FlowModule,
   ],
   providers: [
-    { provide: APP_BASE_HREF, useValue: '/financial-management' }
+    { provide: APP_BASE_HREF, useValue: '/financial-management' },
+    HeaderIntercptor
   ],
   bootstrap: [AppComponent]
 })

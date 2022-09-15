@@ -1,3 +1,5 @@
+import { ModalConfirmationComponentDialog } from './../modal-confirmation/modal-confirmation.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { FinancialReleaseType } from './../../models/FinancialReleaseType';
 import { FinancialRelease } from './../../models/FinancialRelease';
 import { MainService } from './../../services/main.service';
@@ -27,7 +29,8 @@ export class FlowComponent implements OnInit {
 
   constructor(
     private mainService: MainService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private _snackBar: MatSnackBar,
   ) {
 
   }
@@ -36,8 +39,8 @@ export class FlowComponent implements OnInit {
   }
 
   searc() {
-    this.mainService.getExpenses(this._month).subscribe(res => this.expenses = res);
-    this.mainService.getReceipts(this._month).subscribe(res => this.receipts = res);
+    this.mainService.getExpenses(this._month).subscribe(res => this.expenses = res || []);
+    this.mainService.getReceipts(this._month).subscribe(res => this.receipts = res || []);
   }
 
   getBalance(): number {
@@ -45,7 +48,7 @@ export class FlowComponent implements OnInit {
   }
 
   private sumList(list: FinancialRelease[]): number {
-    return list.map(t => t.value).reduce((acc, value) => acc + value, 0);
+    return list.map(t => t?.value).reduce((acc, value) => acc + value, 0);
   }
 
   newReceipt() {
@@ -70,12 +73,14 @@ export class FlowComponent implements OnInit {
       data: {
         new: isNew,
         type: type,
-        release: release,
+        release: JSON.parse(JSON.stringify(release || {})),
         month: this._month,
       }
     });
     dialogRef.afterClosed().subscribe(result => {
-      this.searc();
+      if (result) {
+        this.searc();
+      }
     });
   }
 
@@ -85,5 +90,31 @@ export class FlowComponent implements OnInit {
 
   getTotalReceipts() {
     return this.receipts.map(t => t.value).reduce((acc, value) => acc + value, 0);
+  }
+
+  remove(id: string) {
+    const dialogRef = this.dialog.open(ModalConfirmationComponentDialog, {
+      width: '320px',
+      data: {
+        title: 'Deseja realmente remover esse lançamento ? '
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.mainService.remove(id).subscribe({
+          complete: () => {
+            this._snackBar.open('Lançamento removido com sucesso!', '', {
+              duration: 5000
+            });
+            this.searc();
+          },
+          error: (error) => {
+            this._snackBar.open('Falha ao remover. Tente novamente', 'X', {
+              duration: 5000
+            });
+          }
+        });
+      }
+    });
   }
 }

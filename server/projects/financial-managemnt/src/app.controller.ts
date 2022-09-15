@@ -1,5 +1,6 @@
+import { FinancialReleaseType } from './../models/financial-release.schema';
 import { FinancialReleaseDTO } from './../dto/financial-release.dto';
-import { Body, Controller, Delete, Get, Inject, Logger, Param, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Inject, Logger, Param, ParseEnumPipe, ParseIntPipe, Patch, Post, Query } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { AppService } from './app.service';
 
@@ -23,14 +24,19 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Post()
-  create(@Body() createUserDto: FinancialReleaseDTO) {
-    return this.appService.create(createUserDto);
+  @Get('by-type')
+  findByType(@Query('type', new ParseEnumPipe(FinancialReleaseType)) type: FinancialReleaseType, @Query('month', ParseIntPipe) month: number, @Query('year', ParseIntPipe) year: number) {
+    return this.appService.findByType(type, month, year);
   }
 
   @Get()
   findAll() {
     return this.appService.findAll();
+  }
+
+  @Post()
+  create(@Body() financialReleaseDTO: FinancialReleaseDTO) {
+    return this.appService.create(financialReleaseDTO);
   }
 
   @Get(':id')
@@ -39,8 +45,8 @@ export class AppController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUserDto: FinancialReleaseDTO) {
-    return this.appService.update(id, updateUserDto);
+  update(@Param('id') id: string, @Body() financialReleaseDTO: FinancialReleaseDTO) {
+    return this.appService.update(id, financialReleaseDTO);
   }
 
   @Delete(':id')

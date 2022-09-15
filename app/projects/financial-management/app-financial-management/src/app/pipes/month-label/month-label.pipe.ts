@@ -6,8 +6,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class MothLabelPipe implements PipeTransform {
     transform(value: any, ...args: any[]): any {
-        switch (value) {
-            case 1:
+        const valueToPay = value + 1;
+        console.log(valueToPay);
+
+        switch (valueToPay) {
+            case 13:
                 return 'Jan';
             case 2:
                 return 'Fev';

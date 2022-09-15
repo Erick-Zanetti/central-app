@@ -2,6 +2,8 @@ import { FinancialReleaseType } from './FinancialReleaseType';
 import { Month } from './Month';
 
 export class FinancialRelease {
+    readonly _id: string;
+
     protected _type: FinancialReleaseType;
     public get type(): FinancialReleaseType {
         return this._type;
