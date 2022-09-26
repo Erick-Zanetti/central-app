@@ -29,7 +29,8 @@ export class AppComponent implements OnInit {
   genearetaMonths() {
     const today = new Date();
     let counter = 0;
-    while (counter <= 12) {
+    today.setMonth(today.getMonth() - 1);
+    while (counter <= 13) {
       this.months.push({
         year: today.getFullYear(),
         month: today.getMonth() + 1

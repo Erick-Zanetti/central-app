@@ -2,9 +2,34 @@
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 @import "./variables";
 
+.receipt {
+    color: $receipt-clor;
+
+    .mat-footer-cell-end,
+    .mat-footer-header-end {
+        color: $receipt-clor;
+    }
+
+    hr {
+        background: $receipt-clor;
+    }
+}
+
+.expense {
+    color: $expense-clor;
+
+    .mat-footer-cell-end,
+    .mat-footer-header-end {
+        color: $expense-clor;
+    }
+
+    hr {
+        background: $expense-clor;
+    }
+}
+
 hr {
     border: 0;
     width: 100%;
     height: 1px;
-    background: $border-color;
 }

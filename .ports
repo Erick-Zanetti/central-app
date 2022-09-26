@@ -4,12 +4,12 @@ FRONT
     4002    app-page-not-found                      ANGULAR
     4003    app-portfolio                           ANGULAR
     4004    parcel-typing-card-home                 ANGULAR
-    5000    app-home                                REACT
     5001    parcel-to-do-list-card-home             REACT
     5002    parcel-financial-management-card-home   REACT
     5003    app-to-do-list                          REACT
     5004    parcel-portfolio-card-home              REACT
     5005    app-typing                              REACT
+    5006    app-home                                REACT
     9000    shell
 BACK
     3000    gateway

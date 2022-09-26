@@ -1,0 +1,50 @@
+version: '3'
+services:
+  app-financial-management:
+    build: './app/projects/financial-management/app-financial-management'
+    ports:
+      - "4000:80"
+  parcel-header:
+    build: './app/projects/shared/parcel-header'
+    ports:
+      - "4001:80"
+  app-page-not-found:
+    build: './app/projects/page-not-found/app-page-not-found'
+    ports:
+      - "4002:80"
+  app-portfolio:
+    build: './app/projects/portfolio/app-portfolio'
+    ports:
+      - "4003:80"
+  parcel-typing-card-home:
+    build: './app/projects/typing/parcel-typing-card-home'
+    ports:
+      - "4004:80"
+  parcel-to-do-list-card-home:
+    build: './app/projects/to-do-list/parcel-to-do-list-card-home'
+    ports:
+      - "5001:80"
+  parcel-financial-management-card-home:
+    build: './app/projects/financial-management/parcel-financial-management-card-home'
+    ports:
+      - "5002:80"
+  app-to-do-list:
+    build: './app/projects/to-do-list/app-to-do-list'
+    ports:
+      - "5003:80"
+  parcel-portfolio-card-home:
+    build: './app/projects/portfolio/parcel-portfolio-card-home'
+    ports:
+      - "5004:80"
+  app-typing:
+    build: './app/projects/typing/app-typing'
+    ports:
+      - "5005:80"
+  app-home:
+    build: './app/projects/home/app-home'
+    ports:
+      - "5006:80"
+  shell:
+    build: './app'
+    ports:
+      - "9000:80"

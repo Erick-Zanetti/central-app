@@ -1,8 +1,8 @@
 {
   "name": "@central-app/app-home",
   "scripts": {
-    "start": "webpack serve --port 5000",
-    "serve:single-spa": "webpack serve --port 5000",
+    "start": "webpack serve --port 5006",
+    "serve:single-spa": "webpack serve --port 5006",
     "start:standalone": "webpack serve --env standalone",
     "build": "concurrently npm:build:*",
     "build:webpack": "webpack --mode=production",
