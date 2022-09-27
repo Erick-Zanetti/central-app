@@ -10,6 +10,8 @@ RUN npm run build:single-spa
 
 FROM nginx:latest
 
+COPY nginx/nginx.conf /etc/nginx/
+
 COPY --from=build /usr/local/app/dist/parcel-typing-card-home /usr/share/nginx/html
 
 EXPOSE 80

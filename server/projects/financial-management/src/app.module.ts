@@ -8,9 +8,9 @@ import { MongooseModule } from '@nestjs/mongoose';
 @Module({
   imports: [
     ClientsModule.register([
-      { name: 'LOGGER_SERVICE', transport: Transport.TCP, options: { host: 'localhost', port: 3000 } },
+      { name: 'LOGGER_SERVICE', transport: Transport.TCP, options: { host: 'server', port: 3000 } },
     ]),
-    MongooseModule.forRoot('mongodb://localhost:27017/financial-management'),
+    MongooseModule.forRoot('mongodb://mongodb:27017/financial-management'),
     MongooseModule.forFeature([
       { name: FinancialRelease.name, schema: FinancialReleaseSchema },
     ])

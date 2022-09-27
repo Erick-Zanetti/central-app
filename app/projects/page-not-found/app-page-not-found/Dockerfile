@@ -10,6 +10,8 @@ RUN npm run build:single-spa
 
 FROM nginx:latest
 
+COPY nginx/nginx.conf /etc/nginx/
+
 COPY --from=build /usr/local/app/dist/app-page-not-found /usr/share/nginx/html
 
 EXPOSE 80

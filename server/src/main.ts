@@ -5,7 +5,7 @@ import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 const microserviceOptions: MicroserviceOptions = {
   transport: Transport.TCP,
   options: {
-    host: 'localhost',
+    host: 'server',
     port: 3000
   },
 };
