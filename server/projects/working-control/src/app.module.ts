@@ -1,9 +1,12 @@
 import { Module } from '@nestjs/common';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { MongooseModule } from '@nestjs/mongoose';
+import { MonthValue, MonthValueSchema } from 'models/month-value.schema';
 import { Task, TaskSchema } from './../models/task.schema';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { MonthValueController } from './controllers/month-value.controller';
+import { TaskController } from './controllers/task.controller';
+import { MonthValueService } from './services/month-value.service';
+import { TaskService } from './services/task.service';
 
 @Module({
   imports: [
@@ -15,9 +18,12 @@ import { AppService } from './app.service';
       },
     ]),
     MongooseModule.forRoot('mongodb://mongodb:27017/working-control'),
-    MongooseModule.forFeature([{ name: Task.name, schema: TaskSchema }]),
+    MongooseModule.forFeature([
+      { name: Task.name, schema: TaskSchema },
+      { name: MonthValue.name, schema: MonthValueSchema },
+    ]),
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [TaskController, MonthValueController],
+  providers: [TaskService, MonthValueService],
 })
 export class AppModule {}

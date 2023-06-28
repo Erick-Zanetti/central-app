@@ -4,56 +4,47 @@ import {
   Delete,
   Get,
   Inject,
-  Logger,
   Param,
   Patch,
   Post,
 } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { TaskDTO } from 'dto/task';
-import { AppService } from './app.service';
+import { TaskService } from '../services/task.service';
 
-const logger = new Logger('ClientAppController');
-@Controller('working-control')
-export class AppController {
+@Controller('working-control/tasks')
+export class TaskController {
   constructor(
     @Inject('LOGGER_SERVICE') private readonly client: ClientProxy,
-    private readonly appService: AppService,
+    private readonly taskService: TaskService,
   ) {}
 
   async onApplicationBootstrap() {
     await this.client.connect();
   }
 
-  @Get('test-micro-service')
-  emitMessage() {
-    logger.log('In Microservice Client');
-    this.client.emit<any>('log_message', { text: 'Service Communicating' });
-    return this.appService.getHello();
-  }
-
   @Get()
   findAll() {
-    return this.appService.findAll();
+    return this.taskService.findAll();
   }
 
   @Post()
   create(@Body() task: TaskDTO) {
-    return this.appService.create(task);
+    return this.taskService.create(task);
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.appService.findOne(id);
+    return this.taskService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() task: TaskDTO) {
-    return this.appService.update(id, task);
+    return this.taskService.update(id, task);
   }
 
   @Delete(':id')
   async remove(@Param('id') id: string) {
-    return !!(await this.appService.remove(id));
+    return !!(await this.taskService.remove(id));
   }
 }
