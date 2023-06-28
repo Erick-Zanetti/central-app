@@ -6,6 +6,6 @@ export default function Root(props) {
   }
 
   return <div onClick={go} className="working-control-card-home card-home">
-    <span>Gestão Financeira</span>
+    <span>Controle de trabalho</span>
   </div>
 }
