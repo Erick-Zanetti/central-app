@@ -28,6 +28,14 @@ services:
       - "server"
     networks:
       - nesjs-network
+  working-control:
+    build: './server/projects/working-control'
+    ports:
+      - "3002:3002"
+    depends_on:
+      - "server"
+    networks:
+      - nesjs-network
   # FRONT
   app-financial-management:
     build: './app/projects/financial-management/app-financial-management'
