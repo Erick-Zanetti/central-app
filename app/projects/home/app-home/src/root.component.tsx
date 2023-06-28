@@ -46,7 +46,7 @@ export default function Root(props) {
         </Grid>
         <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
           <div>
-            <Parcel config={(() => System.import('@central-app/parcel-working-control-card-home')) as ParcelConfig<{}>} />
+            <Parcel config={(() => System.import('@central-app/parcel-working-control-card-home')) as ParcelConfig<{}>} /> 
           </div>
         </Grid>
       </Grid>
