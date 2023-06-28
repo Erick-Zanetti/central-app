@@ -10,6 +10,7 @@ FRONT
     5004    parcel-portfolio-card-home              REACT
     5005    app-typing                              REACT
     5006    app-home                                REACT
+    5007    parcel-working-control-card-home        REACT
     9000    shell
 BACK
     3000    gateway

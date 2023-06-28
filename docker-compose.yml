@@ -81,6 +81,10 @@ services:
     build: './app/projects/home/app-home'
     ports:
       - "5006:80"
+  parcel-working-control-card-home:
+    build: './app/projects/working-control/parcel-working-control-card-home'
+    ports:
+      - "5007:80"
   shell:
     build: './app'
     ports:
