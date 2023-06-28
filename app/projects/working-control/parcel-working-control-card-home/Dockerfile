@@ -1,4 +1,4 @@
-FROM node:18.12.1-alpine as build
+FROM node:16.13.0-alpine as build
 
 RUN apk add g++ make py3-pip
 
