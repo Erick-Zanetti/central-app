@@ -3,11 +3,16 @@
 <hr>
 <div>
     <table mat-table [dataSource]="dataSource" matSort>
-        <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Descrição </th>
-            <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+        <ng-container matColumnDef="day">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Dia </th>
+            <td mat-cell *matCellDef="let row"> {{row.day}} </td>
             <td class="mat-footer-header-end" mat-footer-cell *matFooterCellDef> Total </td>
         </ng-container>
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Descrição </th>
+          <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+          <td class="mat-footer-header-end" mat-footer-cell *matFooterCellDef></td>
+      </ng-container>
         <ng-container matColumnDef="value">
             <th class="mat-header-cell-end" mat-header-cell *matHeaderCellDef mat-sort-header> Valor </th>
             <td class="mat-cell-end" mat-cell *matCellDef="let row"> {{row.value | currency: 'BRL'}} </td>

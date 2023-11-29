@@ -16,8 +16,8 @@ export class FinancialRelease {
     @Prop({ required: true })
     value: number;
 
-    @Prop({ required: true, type: Sm.Types.Mixed })
-    month: { month: number, year: number };
+    @Prop({ required: true, type: Sm.Types.Mixed, default: { month: 0, year: 0, day: 1 } })
+    month: { month: number, year: number, day: number };
 
     @Prop({ required: true, type: String, enum: Object.values(FinancialReleaseType) })
     type: FinancialReleaseType;

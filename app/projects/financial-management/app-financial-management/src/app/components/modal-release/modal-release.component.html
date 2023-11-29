@@ -6,6 +6,13 @@
 </h1>
 <div mat-dialog-content>
     <div fxLayout="column" fxLayoutAlign="space-evenly stretch" fxLayoutGap="16px" [formGroup]="form">
+        <mat-form-field class="without-monthyear" appearance="fill">
+            <mat-label>Dia</mat-label>
+            <input matInput [matDatepicker]="dp3" [disabled]="true" formControlName="day">
+            <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+            <mat-datepicker panelClass="without-monthyear" #dp3 disabled="false"></mat-datepicker>
+        </mat-form-field>
+
         <mat-form-field fxFlex appearance="outline">
             <mat-label>Descrição</mat-label>
             <input formControlName="name" matInput maxlength="30" placeholder="Descrição">

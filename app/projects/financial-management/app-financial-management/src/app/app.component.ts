@@ -1,6 +1,7 @@
-import { Month } from './models/Month';
 import { Component, OnInit } from '@angular/core';
 import { mountRootParcel } from 'single-spa';
+import { Month } from './models/Month';
+import { SubTabService } from './services/subtab.service';
 
 declare var System: any;
 @Component({
@@ -21,6 +22,10 @@ export class AppComponent implements OnInit {
       title: 'Gestão Financeira'
     }
   }
+
+  constructor(
+    public subTabService: SubTabService,
+  ) { }
 
   ngOnInit() {
     this.genearetaMonths();

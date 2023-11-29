@@ -7,7 +7,24 @@
             {{month.month | monthLabel}}/{{month.year}}
         </ng-template>
         <ng-template matTabContent>
-            <app-flow [month]="month"></app-flow>
+
+          <mat-tab-group class="sub-mat-tab-group" color="accent" [(selectedIndex)]="subTabService.selectedIndex">
+
+            <mat-tab>
+              <ng-template mat-tab-label>Lançamentos</ng-template>
+              <ng-template matTabContent>
+                <app-flow [month]="month"></app-flow>
+              </ng-template>
+            </mat-tab>
+
+            <mat-tab>
+              <ng-template mat-tab-label>Linha do tempo</ng-template>
+              <ng-template matTabContent>
+                <app-timeline [month]="month"></app-timeline>
+              </ng-template>
+            </mat-tab>
+
+          </mat-tab-group>
         </ng-template>
     </mat-tab>
 </mat-tab-group>

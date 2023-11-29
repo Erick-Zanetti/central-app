@@ -14,7 +14,34 @@
         background: $receipt-clor;
     }
 }
+ngx-timeline {
+  .center-icon-container .icon {
+    background: #3f51b5 !important;
+  }
+  .period-container {
+    background: #3f51b5 !important;
+  }
 
+  .col-left {
+    .event {
+      color: #fff !important;
+      background: $receipt-clor !important;
+    }
+    .arrow.right {
+      border-left-color: $receipt-clor !important;
+    }
+  }
+
+  .col-right {
+    .event {
+      color: #fff !important;
+      background: $expense-clor !important;
+    }
+    .arrow.left {
+      border-right-color: $expense-clor !important;
+    }
+  }
+}
 .expense {
     color: $expense-clor;
 

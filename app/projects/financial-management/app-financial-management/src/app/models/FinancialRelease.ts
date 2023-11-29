@@ -3,6 +3,8 @@ import { Month } from './Month';
 
 export class FinancialRelease {
     readonly _id: string;
+    date: any;
+    day: any;
 
     protected _type: FinancialReleaseType;
     public get type(): FinancialReleaseType {

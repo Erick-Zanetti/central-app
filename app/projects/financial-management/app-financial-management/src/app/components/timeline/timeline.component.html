@@ -1,0 +1,9 @@
+<div class="container">
+  <ngx-timeline [events]="events" [langCode]="'pt'" [reverseOrder]="false" [enableAnimation]="false" [dateInstantCustomTemplate]="dateInstantCustomTemplate"></ngx-timeline>
+
+  <ng-template #dateInstantCustomTemplate let-item=item>
+    <span>
+      {{getTotalUnitNow(item) | currency: 'BRL'}}
+    </span>
+  </ng-template>
+</div>
