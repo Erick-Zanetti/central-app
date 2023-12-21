@@ -34,7 +34,9 @@ export class ModalReleaseComponentDialog implements OnInit {
         if (!this.data.new) {
             this.form.get('name')?.setValue(this.data.release?.name);
             this.form.get('value')?.setValue(this.data.release?.value);
-            this.form.get('day')?.setValue(new Date(this.data?.month?.yaer, this.data?.month?.month, this.data?.month?.day));
+            this.form.get('day')?.setValue(new Date(this.data?.month?.year, this.data?.month?.month, this.data?.release?.month?.day));
+        } else {
+            this.form.get('day')?.setValue(new Date(this.data?.month?.year, this.data?.month?.month, 1));
         }
     }
 
@@ -42,8 +44,8 @@ export class ModalReleaseComponentDialog implements OnInit {
         this.form = new FormGroup({
             name: new FormControl('', [Validators.required, Validators.maxLength(30)]),
             value: new FormControl(0, [Validators.required, Validators.min(0)]),
-            day: new FormControl(1, [Validators.required, Validators.min(1), Validators.max(31)]),
-        })
+            day: new FormControl(null, [Validators.required, Validators.min(1), Validators.max(31)]),
+        });
     }
 
     save() {
