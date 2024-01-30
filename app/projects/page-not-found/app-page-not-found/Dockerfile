@@ -1,10 +1,11 @@
-FROM node:latest as build
+FROM node:14 as build
 
 WORKDIR /usr/local/app
 
 COPY ./ /usr/local/app/
 
 RUN npm update
+
 RUN npm install @types/node@14
 
 RUN npm install --legacy-peer-deps
