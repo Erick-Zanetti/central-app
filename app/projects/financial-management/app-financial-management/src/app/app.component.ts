@@ -33,13 +33,15 @@ export class AppComponent implements OnInit {
 
   genearetaMonths() {
     let today = new Date();
+    const months = [];
     today.setMonth(today.getMonth() - 1);
     for (let counter = 0; counter <= 13; counter++) {
-      this.months.push({
+      months.push({
         year: today.getFullYear(),
         month: today.getMonth() + 1
       });
       today = new Date(today.getFullYear(), today.getMonth() + 1);
     }
+    this.months = months;
   }
 }

@@ -4,6 +4,10 @@ WORKDIR /usr/local/app
 
 COPY ./ /usr/local/app/
 
+RUN npm update
+
+RUN npm install @types/node@14
+
 RUN npm install --legacy-peer-deps
 
 RUN npm run build:single-spa
