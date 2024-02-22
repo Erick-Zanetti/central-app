@@ -1,1 +1,0 @@
-cd ../projects/typing/app-typing && npm run serve:single-spa

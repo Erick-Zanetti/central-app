@@ -10,7 +10,7 @@ import { FinancialRelease, FinancialReleaseSchema } from './models/financial-rel
     ClientsModule.register([
       { name: 'LOGGER_SERVICE', transport: Transport.TCP, options: { host: 'server', port: 3000 } },
     ]),
-    MongooseModule.forRoot('mongodb://localhost:27017/financial-management'),
+    MongooseModule.forRoot('mongodb://mongodb:27017/financial-management'),
     MongooseModule.forFeature([
       { name: FinancialRelease.name, schema: FinancialReleaseSchema },
     ])

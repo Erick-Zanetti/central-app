@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>
+    {{data.title}}
+</h1>
+<div mat-dialog-content>
+    {{data.content}}
+</div>
+<div mat-dialog-actions style="justify-content: flex-end;">
+    <button mat-button color="warn" cdkFocusInitial (click)="onNoClick()">{{data.noButton || 'Não'}}</button>
+    <button mat-button color="primary" (click)="onNoClick(true)">{{data.noButton || 'Sim'}}</button>
+</div>

@@ -5,8 +5,10 @@ import {
   Get,
   Inject,
   Param,
+  ParseIntPipe,
   Patch,
   Post,
+  Query,
 } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { TaskDTO } from '../dto/task';
@@ -21,6 +23,19 @@ export class TaskController {
 
   async onApplicationBootstrap() {
     await this.client.connect();
+  }
+
+  @Get('by-month')
+  getTasks(@Query('month', ParseIntPipe) month: number, @Query('year', ParseIntPipe) year: number) {
+    console.log('month', month);
+    console.log('year', year);
+
+    return this.taskService.getTasks(month, year);
+  }
+
+  @Get('prices')
+  getPrices() {
+    return this.taskService.getPrices();
   }
 
   @Get()

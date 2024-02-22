@@ -1,0 +1,92 @@
+<div>
+  <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
+    <div fxFlex="100" fxFlex.gt-xs="50">
+      <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
+        <mat-form-field appearance="outline" fxFlex="70">
+          <mat-label>Mês</mat-label>
+            <mat-select [(ngModel)]="month" (ngModelChange)="searc()">
+            <mat-option [value]="0">Janeiro</mat-option>
+            <mat-option [value]="1">Fevereiro</mat-option>
+            <mat-option [value]="2">Março</mat-option>
+            <mat-option [value]="3">Abril</mat-option>
+            <mat-option [value]="4">Maio</mat-option>
+            <mat-option [value]="5">Junho</mat-option>
+            <mat-option [value]="6">Julho</mat-option>
+            <mat-option [value]="7">Agosto</mat-option>
+            <mat-option [value]="8">Setembro</mat-option>
+            <mat-option [value]="9">Outubro</mat-option>
+            <mat-option [value]="10">Novembro</mat-option>
+            <mat-option [value]="11">Dezembro</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" fxFlex="30">
+          <mat-label>Ano</mat-label>
+          <mat-select [(ngModel)]="year" (ngModelChange)="searc()">
+            <mat-option [value]="2023">2023</mat-option>
+            <mat-option [value]="2024">2024</mat-option>
+            <mat-option [value]="2025">2025</mat-option>
+            <mat-option [value]="2026">2026</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div fxFlex="100" fxFlex.gt-xs="50">
+      <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
+        <button fxFlex="136px" mat-stroked-button color="primary" (click)="openModalReleaseComponentDialog(true)">Adicionar</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="space-between start" fxLayoutGap="16px">
+    <div fxFlex="100" fxFlex.gt-xs="50">
+
+      <div class="block-roudend">
+        <table mat-table [dataSource]="dataSource" matSort>
+          <ng-container matColumnDef="task">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Task </th>
+              <td mat-cell *matCellDef="let row"> {{row.task}} </td>
+              <td class="mat-footer-header-end" mat-footer-cell *matFooterCellDef> Total </td>
+          </ng-container>
+          <ng-container matColumnDef="time">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Horas </th>
+            <td mat-cell *matCellDef="let row"> {{row.time}} </td>
+            <td class="mat-footer-header-end" mat-footer-cell *matFooterCellDef>{{totalHours}}</td>
+          </ng-container>
+          <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+              <td mat-cell *matCellDef="let row" style="width: 112px;">
+                  <button mat-icon-button color="primary" style="margin: 0 16px;" (click)="openModalReleaseComponentDialog(false, row)">
+                      <mat-icon>edit</mat-icon>
+                  </button>
+                  <button mat-icon-button color="primary" (click)="remove(row._id)">
+                      <mat-icon>delete</mat-icon>
+                  </button>
+              </td>
+              <td mat-footer-cell *matFooterCellDef></td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          <tr mat-footer-row *matFooterRowDef="displayedColumns; sticky: true"></tr>
+
+          <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="3">Sem dados</td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+
+    <div fxFlex="100" fxFlex.gt-xs="50">
+      <div class="block-roudend">
+        <div style="max-width: 320px;margin: 0 auto;">
+          <canvas baseChart [data]="pieChartData" [type]="pieChartType" [options]="pieChartOptions">
+          </canvas>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

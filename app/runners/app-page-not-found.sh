@@ -1,1 +1,0 @@
-cd ../projects/page-not-found/app-page-not-found && npm run serve:single-spa

@@ -42,7 +42,7 @@ services:
       - "server"
     networks:
       - nestjs-network
-  working-control:
+  server-working-control:
     restart: always
     build: './server/projects/working-control'
     ports:
@@ -72,6 +72,10 @@ services:
     build: './app/projects/typing/parcel-typing-card-home'
     ports:
       - "4004:80"
+  app-working-control:
+    build: './app/projects/working-control/app-working-control'
+    ports:
+      - "4005:80"
   parcel-to-do-list-card-home:
     build: './app/projects/to-do-list/parcel-to-do-list-card-home'
     ports:

@@ -1,5 +1,6 @@
 export enum Applications {
     FINANCIAL_MANAGEMENT = 'FINANCIAL_MANAGEMENT',
+    WORKING_CONTROL = 'WORKING_CONTROL',
     HOME = 'HOME',
     TODO_LIST = 'TODO_LIST',
     PORTFOLIO = 'PORTFOLIO',
@@ -9,6 +10,9 @@ export enum Applications {
 export const routes: Routes = {
     FINANCIAL_MANAGEMENT: {
         startWith: ['/financial-management'],
+    },
+    WORKING_CONTROL: {
+        startWith: ['/working-control'],
     },
     HOME: {
         startWith: ['/home'],

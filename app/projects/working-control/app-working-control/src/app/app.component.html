@@ -1,0 +1,18 @@
+<div>
+    <parcel [config]="config" [mountParcel]="mountRootParcel" [customProps]="customProps"></parcel>
+</div>
+<mat-tab-group mat-stretch-tabs>
+  <mat-tab>
+    <ng-template mat-tab-label>
+        Lançamentos
+    </ng-template>
+    <ng-template matTabContent>
+      <app-releases></app-releases>
+    </ng-template>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      Balanço Anual
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

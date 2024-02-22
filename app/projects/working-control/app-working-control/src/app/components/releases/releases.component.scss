@@ -1,0 +1,47 @@
+:host {
+  overflow: hidden;
+  margin: 32px 0;
+  width: 100%;
+  display: block;
+
+  >div {
+    padding: 0 32px;
+  }
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  margin-top: 5px;
+}
+
+.block-roudend {
+  border: solid 1px rgb(165, 165, 165);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+table {
+  width: 100%;
+
+  tr.mat-footer-row {
+    font-weight: bold;
+  }
+
+  .mat-footer-cell-end,
+  .mat-cell-end {
+    text-align: end;
+  }
+}
+
+::ng-deep .mat-header-cell-end {
+  .mat-sort-header-container {
+    justify-content: end;
+  }
+}
+
+::ng-deep td.mat-footer-cell {
+  border-bottom: none !important;
+}

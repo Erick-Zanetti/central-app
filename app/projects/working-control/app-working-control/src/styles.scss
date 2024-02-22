@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import "./variables";
+
+.receipt {
+    color: $receipt-clor;
+
+    .mat-footer-cell-end,
+    .mat-footer-header-end {
+        color: $receipt-clor;
+    }
+
+    hr {
+        background: $receipt-clor;
+    }
+}
+ngx-timeline {
+  .center-icon-container .icon {
+    background: #3f51b5 !important;
+  }
+  .period-container {
+    background: #3f51b5 !important;
+  }
+
+  .col-left {
+    .event {
+      color: #fff !important;
+      background: $receipt-clor !important;
+    }
+    .arrow.right {
+      border-left-color: $receipt-clor !important;
+    }
+  }
+
+  .col-right {
+    .event {
+      color: #fff !important;
+      background: $expense-clor !important;
+    }
+    .arrow.left {
+      border-right-color: $expense-clor !important;
+    }
+  }
+}
+.expense {
+    color: $expense-clor;
+
+    .mat-footer-cell-end,
+    .mat-footer-header-end {
+        color: $expense-clor;
+    }
+
+    hr {
+        background: $expense-clor;
+    }
+}
+
+hr {
+    border: 0;
+    width: 100%;
+    height: 1px;
+}

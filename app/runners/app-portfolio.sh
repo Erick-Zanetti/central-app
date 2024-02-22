@@ -1,1 +1,0 @@
-cd ../projects/portfolio/app-portfolio && npm run serve:single-spa

@@ -17,4 +17,4 @@ COPY --from=builder /working-control/node_modules ./node_modules
 COPY --from=builder /working-control/package.json ./package.json
 
 EXPOSE 3002
-CMD ["node", "src/main.js"]
+CMD ["node", "main.js"]

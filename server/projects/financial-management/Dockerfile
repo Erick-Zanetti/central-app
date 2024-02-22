@@ -17,4 +17,4 @@ COPY --from=builder /financial-managemnt/node_modules ./node_modules
 COPY --from=builder /financial-managemnt/package.json ./package.json
 
 EXPOSE 3001
-CMD ["node", "src/main.js"]
+CMD ["node", "main.js"]

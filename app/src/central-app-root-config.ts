@@ -26,6 +26,12 @@ registerApplication({
 });
 
 registerApplication({
+  name: '@central-app/app-working-control',
+  app: (() => System.import('@central-app/app-working-control')) as Application<{}>,
+  activeWhen: location => activeWhen(location, routes.WORKING_CONTROL),
+});
+
+registerApplication({
   name: '@central-app/app-typing',
   app: (() => System.import('@central-app/app-typing')) as Application<{}>,
   activeWhen: location => activeWhen(location, routes.TYPING),

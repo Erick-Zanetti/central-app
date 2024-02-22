@@ -1,1 +1,0 @@
-cd ../projects/to-do-list/parcel-to-do-list-card-home && npm run serve:single-spa
