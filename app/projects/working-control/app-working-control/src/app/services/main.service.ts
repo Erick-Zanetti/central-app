@@ -40,4 +40,9 @@ export class MainService {
   getTasks(month: number, year: number): Observable<TaskRelease[]> {
     return this.http.get<TaskRelease[]>(`${this.url}/tasks/by-month?month=${month}&year=${year}`);
   }
+
+  getPrices() {
+    return this.http.get(`${this.url}/tasks/prices`);
+  }
+
 }

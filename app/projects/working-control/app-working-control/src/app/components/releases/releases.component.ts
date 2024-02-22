@@ -69,6 +69,8 @@ export class ReleasesComponent implements OnInit {
     }]
   };
 
+  public prices: any = {};
+
   constructor(
     private dialog: MatDialog,
     private mainService: MainService,
@@ -101,6 +103,14 @@ export class ReleasesComponent implements OnInit {
         return i.hours + (i.minutes / 60);
       });
       this.chart?.update();
+
+      this.loadPrices();
+    });
+  }
+
+  loadPrices() {
+    this.mainService.getPrices().subscribe((data: any) => {
+      this.prices = data;
     });
   }
 
@@ -147,5 +157,11 @@ export class ReleasesComponent implements OnInit {
         });
       }
     });
+  }
+
+  getTotalValue() {
+    return this.dataSource?.data.reduce((acc, cur) => {
+      return acc + (cur.hours + (cur.minutes / 60));
+    }, 0) * this.prices[this.year];
   }
 }
