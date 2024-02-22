@@ -9,7 +9,7 @@ import {
   Query,
 } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
-import { MonthValueDTO } from 'dto/month-value';
+import { MonthValueDTO } from '../dto/month-value';
 import { MonthValueService } from '../services/month-value.service';
 
 @Controller('working-control/month-value')

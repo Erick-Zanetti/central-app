@@ -9,7 +9,7 @@ import {
   Post,
 } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
-import { TaskDTO } from 'dto/task';
+import { TaskDTO } from '../dto/task';
 import { TaskService } from '../services/task.service';
 
 @Controller('working-control/tasks')

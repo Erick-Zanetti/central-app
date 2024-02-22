@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { MongooseModule } from '@nestjs/mongoose';
-import { MonthValue, MonthValueSchema } from 'models/month-value.schema';
-import { Task, TaskSchema } from './../models/task.schema';
 import { MonthValueController } from './controllers/month-value.controller';
 import { TaskController } from './controllers/task.controller';
+import { MonthValue, MonthValueSchema } from './models/month-value.schema';
+import { Task, TaskSchema } from './models/task.schema';
 import { MonthValueService } from './services/month-value.service';
 import { TaskService } from './services/task.service';
 

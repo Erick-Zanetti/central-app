@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { MonthValueDTO } from './../../dto/month-value';
+import { MonthValueDTO } from '../dto/month-value';
 import {
   MonthValue,
   MonthValueDocument,
-} from './../../models/month-value.schema';
+} from '../models/month-value.schema';
 
 @Injectable()
 export class MonthValueService {

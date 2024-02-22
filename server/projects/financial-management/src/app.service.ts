@@ -1,8 +1,8 @@
-import { FinancialReleaseDTO } from './../dto/financial-release.dto';
-import { FinancialReleaseDocument, FinancialRelease, FinancialReleaseType } from './../models/financial-release.schema';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
+import { FinancialReleaseDTO } from './dto/financial-release.dto';
+import { FinancialRelease, FinancialReleaseDocument, FinancialReleaseType } from './models/financial-release.schema';
 
 @Injectable()
 export class AppService {

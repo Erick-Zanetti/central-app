@@ -1,8 +1,8 @@
-import { FinancialReleaseType } from './../models/financial-release.schema';
-import { FinancialReleaseDTO } from './../dto/financial-release.dto';
 import { Body, Controller, Delete, Get, Inject, Logger, Param, ParseEnumPipe, ParseIntPipe, Patch, Post, Query } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { AppService } from './app.service';
+import { FinancialReleaseDTO } from './dto/financial-release.dto';
+import { FinancialReleaseType } from './models/financial-release.schema';
 
 const logger = new Logger("ClientAppController");
 @Controller('financial-release')
