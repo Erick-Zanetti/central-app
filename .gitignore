@@ -1,4 +1,6 @@
 db/*
 !db/.gitkeep 
+backups/*
+!backups/.gitkeep 
 .vs
 package-lock.json

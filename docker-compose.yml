@@ -1,8 +1,9 @@
 version: '3'
+
 services:
   # DATABASE
   mongodb:
-    image : mongo:latest
+    image: mongo:7.0.5
     container_name: mongodb
     restart: always
     volumes:
@@ -10,32 +11,46 @@ services:
     ports:
       - 27017:27017
     networks:
-      - nesjs-network
-  # BACK
+      - nestjs-network
+  # BACKUP SERVICE
+  mongo_backup:
+    build:
+      context: .
+      dockerfile: mongobackup.dockerfile
+    container_name: mongo_backup
+    depends_on:
+      - mongodb
+    volumes:
+      - './backups:/backups/data'
+    networks:
+      - nestjs-network
   server:
+    restart: always
     build: './server'
     ports:
       - "3000:3000"
     depends_on:
       - "mongodb"
     networks:
-      - nesjs-network
+      - nestjs-network
   server-financial-management:
+    restart: always
     build: './server/projects/financial-management'
     ports:
       - "3001:3001"
     depends_on:
       - "server"
     networks:
-      - nesjs-network
+      - nestjs-network
   working-control:
+    restart: always
     build: './server/projects/working-control'
     ports:
       - "3002:3002"
     depends_on:
       - "server"
     networks:
-      - nesjs-network
+      - nestjs-network
   # FRONT
   app-financial-management:
     build: './app/projects/financial-management/app-financial-management'
@@ -90,5 +105,5 @@ services:
     ports:
       - "9000:80"
 networks:
-    nesjs-network:
-      driver: bridge
+  nestjs-network:
+    driver: bridge
